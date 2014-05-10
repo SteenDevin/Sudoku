@@ -27,6 +27,10 @@ public class Sudoku {
             + "\n\t* Good Luck and Have Fun!!!                                              *"
             + "\n\t***********************************************************************"
             + "\n";
+    
+    int seconds_left;
+    
+    int score_multiplier;
             
 
           
@@ -41,7 +45,8 @@ public class Sudoku {
     public static void main(String[] args) {
     Sudoku ourGame = new Sudoku();
     ourGame.getName();
-    ourGame.displayHelp();}
+    ourGame.displayHelp();
+    ourGame.computeScore();}
    
     
             public void getName() {
@@ -54,7 +59,17 @@ public class Sudoku {
     System.out.println(this.instructions);
         // TODO code application logic here
     }
-    
+   public void computeScore() {
+        int final_score;
+        
+        seconds_left = 8;
+            //8 is a placeholder for an actual timer result 
+        score_multiplier = 4;
+            //4 is a theoretical scoring system--every second a player has left in the timer earns them 4 points
+        final_score = seconds_left * score_multiplier;
+        
+        System.out.println(this.name + " has scored " + final_score + " points this game.");
+    }
 }
 
 
