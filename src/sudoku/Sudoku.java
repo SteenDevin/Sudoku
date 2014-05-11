@@ -54,13 +54,13 @@ public class Sudoku {
     Game game = new Game();
     game.displayPlayer();
     game.displayDifficulty();
-    }
+  }
    
     public void getCharacter(){
         
     }
     
-            public void getName() {
+     public void getName() {
        Scanner input = new Scanner(System.in);
        System.out.println("Enter Your Name: ");
        this.name = input.next();
