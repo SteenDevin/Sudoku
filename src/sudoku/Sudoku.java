@@ -18,14 +18,15 @@ public class Sudoku {
    //Instant variable
     String name;
     
-    String instructions = "\n\t***********************************************************************"
-            + "\n\t* Welcome to the game of Sudoku!                          *"                            
-            + "\n\t* The object of the game       *"
-            + "\n\t* is to enter the numbers 1-9, horisontally, vertically,    *"
-            + "\n\t* diagonally, and within the 3x3 squares that make up the   *" 
-            + "\n\t* board.                                                    *"
-            + "\n\t* Good Luck and Have Fun!!!                                              *"
-            + "\n\t***********************************************************************"
+    String instructions = 
+              "\n\t*******************************************************"
+            + "\n\t*        Welcome to the game of Sudoku!               *"                            
+            + "\n\t*   The object of the game is to enter the numbers    *"
+            + "\n\t*  1-9, horisontally, vertically, and within the 3x3  *"
+            + "\n\t*        squares that make up the board.              *" 
+            + "\n\t*         No duplicates in any instances!             *"
+            + "\n\t*            Good Luck and Have Fun!!!                *"
+            + "\n\t*******************************************************"
             + "\n";
     
     int seconds_left;
@@ -46,7 +47,14 @@ public class Sudoku {
     Sudoku ourGame = new Sudoku();
     ourGame.getName();
     ourGame.displayHelp();
-    ourGame.computeScore();}
+    ourGame.computeScore();
+    
+   // this chunk of code calls parts of the Game class
+    // and part of the Player class
+    Game game = new Game();
+    game.displayPlayer();
+    game.displayDifficulty();
+    }
    
     public void getCharacter(){
         
