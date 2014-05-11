@@ -48,6 +48,9 @@ public class Sudoku {
     ourGame.displayHelp();
     ourGame.computeScore();}
    
+    public void getCharacter(){
+        
+    }
     
             public void getName() {
        Scanner input = new Scanner(System.in);
@@ -57,7 +60,7 @@ public class Sudoku {
     public void displayHelp() {
     System.out.println("\n Welcome " + this.name + "\n");
     System.out.println(this.instructions);
-        // TODO code application logic here
+  
     }
    public void computeScore() {
         int final_score;

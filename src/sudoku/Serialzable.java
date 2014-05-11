@@ -10,6 +10,6 @@ package sudoku;
  *
  * @author Cherrylzh
  */
-public class charater {
+interface Serialzable {
     
 }
