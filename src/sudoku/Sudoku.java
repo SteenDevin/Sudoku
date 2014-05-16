@@ -36,7 +36,7 @@ public class Sudoku {
 
           
             
-  
+    
             
          
 
@@ -54,8 +54,10 @@ public class Sudoku {
     Game game = new Game();
     game.displayPlayer();
     game.displayDifficulty();
+    Player player = new Player();
+    player.getPlayerStatistics();
   }
-   
+  
     public void getCharacter(){
         
     }
@@ -68,7 +70,7 @@ public class Sudoku {
     public void displayHelp() {
     System.out.println("\n Welcome " + this.name + "\n");
     System.out.println(this.instructions);
-  
+    
     }
    public void computeScore() {
         int final_score;

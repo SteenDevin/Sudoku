@@ -26,9 +26,9 @@ public class Game {
     public void displayPlayer() {
         System.out.println("\n\tThis is a temporary profile while the "
                            + "game is under construction.");
-        this.defaultPlayer.displayName();
+        this.defaultPlayer.displayName();      
     }
-    
+     
     public void displayDifficulty() {
         System.out.println("\n\tThe default game difficulty is set to "
         + difficulty);
