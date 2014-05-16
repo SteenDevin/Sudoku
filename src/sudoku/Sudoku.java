@@ -54,8 +54,12 @@ public class Sudoku {
     Game game = new Game();
     game.displayPlayer();
     game.displayDifficulty();
+    
     Player player = new Player();
     player.getPlayerStatistics();
+    Board board = new Board();
+    board.displayBrd();
+    player.getErrorCheck();
   }
   
     public void getCharacter(){

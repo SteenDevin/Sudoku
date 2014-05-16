@@ -15,6 +15,8 @@ public class Player {
     String playerType;
     public long completes = 0;
     public long incompletes = 0;
+    public long correct = 78;
+    public long incorrect = 3;
     
             
     
@@ -59,4 +61,36 @@ public void getPlayerStatistics() {
         );
         
     }
+public double getCorrectPercentage(long incorrect, long correct) {
+  
+
+        if (correct < 0) {  
+ 	System.out.println("Invalid number of correct answers");
+ 	return -1;
+}
+        if (incorrect < 0) {
+ 	System.out.println("Invalid number of errors");
+ 	return -1;
+}	 
+        double totalChoices = incorrect + correct;
+   
+        if (totalChoices == 0) {
+        return 0;
+}
+        double completePercent = correct / totalChoices;
+  
+        return completePercent * 100;
+
+}
+
+public void getErrorCheck() {
+        System.out.println(
+                this.name + " "
+                + this.getCorrectPercentage(this.incorrect, this.correct) + "% of your choices are correct."
+                + "\n\t" + this.correct + " of your choices are correct, "
+                + this.incorrect + " of your choices are incorrect. "
+        );
+        
+    }
+
 }
