@@ -54,7 +54,7 @@ public double getPercentageComplete(long completes, long incompletes) {
 
 public void getPlayerStatistics() {
         System.out.println(
-                this.name + " has completes "
+                this.name + " has completed "
                 + this.getPercentageComplete(this.completes, this.incompletes) + "% of the games."
                 + "\n\t" + this.completes + " completes, "
                 + this.incompletes + " incompletes. "
@@ -76,16 +76,18 @@ public double getCorrectPercentage(long incorrect, long correct) {
    
         if (totalChoices == 0) {
         return 0;
+        
 }
         double completePercent = correct / totalChoices;
   
         return completePercent * 100;
+        
 
 }
 
 public void getErrorCheck() {
         System.out.println(
-                this.name + " "
+                this.name + ", "
                 + this.getCorrectPercentage(this.incorrect, this.correct) + "% of your choices are correct."
                 + "\n\t" + this.correct + " of your choices are correct, "
                 + this.incorrect + " of your choices are incorrect. "
