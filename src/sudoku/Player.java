@@ -15,8 +15,8 @@ public class Player {
     String playerType;
     public long completes = 0;
     public long incompletes = 0;
-    public long correct = 78;
-    public long incorrect = 3;
+    public long correct = 77;
+    public long incorrect = 4;
     
             
     
@@ -68,19 +68,27 @@ public double getCorrectPercentage(long incorrect, long correct) {
  	System.out.println("Invalid number of correct answers");
  	return -1;
 }
+        if (correct > 81) {  
+ 	System.out.println("Invalid number of correct answers");
+ 	return -1;
+}
         if (incorrect < 0) {
- 	System.out.println("Invalid number of errors");
+ 	System.out.println("Invalid number of incorrect answers");
+ 	return -1;
+}        
+        if (incorrect > 81) {  
+ 	System.out.println("Invalid number of correct answers");
  	return -1;
 }	 
-        double totalChoices = incorrect + correct;
+        double totalChoices = correct + incorrect;
    
         if (totalChoices == 0) {
         return 0;
         
 }
-        double completePercent = correct / totalChoices;
+        double completePercent = (correct / totalChoices) *100;
   
-        return completePercent * 100;
+        return completePercent;
         
 
 }
