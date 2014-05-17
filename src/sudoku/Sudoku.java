@@ -54,6 +54,7 @@ public class Sudoku {
     Game game = new Game();
     game.displayPlayer();
     game.displayDifficulty();
+    game.checkScore(0,0,0);
     
     Player player = new Player();
     player.getPlayerStatistics();
