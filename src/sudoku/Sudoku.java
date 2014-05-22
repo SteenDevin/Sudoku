@@ -48,13 +48,11 @@ public class Sudoku {
     ourGame.getName();
     ourGame.displayHelp();
     ourGame.computeScore();
+    HelpMenuView helpMenu = new HelpMenuView();
+
+        helpMenu.getInput();
     
-   // this chunk of code calls parts of the Game class
-    // and part of the Player class
-    Game game = new Game();
-    game.displayPlayer();
-    game.displayDifficulty();
-    game.checkScore(0,0,0);
+   
     
     Player player = new Player();
     player.getPlayerStatistics();
