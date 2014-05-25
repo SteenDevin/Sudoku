@@ -36,6 +36,9 @@ public class GamePreferencesMenuControl {
         System.out.println("\n\tgetDifficulty called");
     return true;
     }  
-    
+    public void displayPreferencesMenu() {
+        GamePreferencesMenuView gamePreferencesMenu = new GamePreferencesMenuView(this.game);
+        gamePreferencesMenu.getInput();
+    }
 }
     

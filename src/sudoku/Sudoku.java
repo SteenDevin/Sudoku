@@ -47,6 +47,7 @@ public class Sudoku {
     Sudoku ourGame = new Sudoku();
     ourGame.getName();
     ourGame.displayHelp();
+    
     //ourGame.computeScore();
     MainMenuView mainMenu = new MainMenuView();
 
@@ -75,6 +76,7 @@ public class Sudoku {
     System.out.println(this.instructions);
     
     }
+    
    /*public void computeScore() {
         int final_score;
         
