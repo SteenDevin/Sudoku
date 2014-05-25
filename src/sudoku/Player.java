@@ -28,6 +28,10 @@ public class Player {
         System.out.println("\t\tHello, I'm the default player, " + name);
     }
     
+    public void setName(String name) {
+        this.name = name;
+    }
+    
    
 
 public double getPercentageComplete(long completes, long incompletes) {

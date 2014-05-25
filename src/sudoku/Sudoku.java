@@ -29,9 +29,9 @@ public class Sudoku {
             + "\n\t*******************************************************"
             + "\n";
     
-    int seconds_left;
+    //int seconds_left;
     
-    int score_multiplier;
+    //int score_multiplier;
             
 
           
@@ -47,25 +47,25 @@ public class Sudoku {
     Sudoku ourGame = new Sudoku();
     ourGame.getName();
     ourGame.displayHelp();
-    ourGame.computeScore();
-    HelpMenuView helpMenu = new HelpMenuView();
+    //ourGame.computeScore();
+    MainMenuView mainMenu = new MainMenuView();
 
-        helpMenu.getInput();
+        mainMenu.getInput();
     
    
     
-    Player player = new Player();
+   /* Player player = new Player();
     player.getPlayerStatistics();
     Board board = new Board();
     board.displayBrd();
-    player.getErrorCheck();
+    player.getErrorCheck();*/
   }
   
-    public void getCharacter(){
+   /* public void getCharacter(){
         
-    }
+    }*/
     
-     public void getName() {
+    public void getName() {
        Scanner input = new Scanner(System.in);
        System.out.println("Enter Your Name: ");
        this.name = input.next();
@@ -75,7 +75,7 @@ public class Sudoku {
     System.out.println(this.instructions);
     
     }
-   public void computeScore() {
+   /*public void computeScore() {
         int final_score;
         
         seconds_left = 8;
@@ -85,7 +85,7 @@ public class Sudoku {
         final_score = seconds_left * score_multiplier;
         
         System.out.println(this.name + " has scored " + final_score + " points this game.");
-    }
+    }*/
 }
 
 

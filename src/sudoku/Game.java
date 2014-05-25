@@ -12,6 +12,9 @@ package sudoku;
  */
 public class Game {
     
+    public final static String NEW_PLAYER = "NEW_PLAYER";
+    
+    public Player newPlayer;
     String difficulty = "Easy";
     Player defaultPlayer;
     String status;
@@ -20,7 +23,7 @@ public class Game {
     
     public Game() {
         
-        this.defaultPlayer = new Player();
+        this.newPlayer = new Player();
                 
     }
     
