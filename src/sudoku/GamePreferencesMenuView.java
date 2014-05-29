@@ -22,8 +22,8 @@ public class GamePreferencesMenuView {
         {"Q", "Return to game menu"}
     };
 
-    public GamePreferencesMenuView(Game game) {
-        this.game = game;
+    public GamePreferencesMenuView() {
+        
     }
 
     

@@ -43,9 +43,9 @@ public class MainMenuView {
                 case "N":
                     this.mainMenuControl.startGame();
                     break;
-                //case "P":
-                    //this.mainMenuControl.displayGamePreferencesMenu();
-                   // break;
+                case "P":
+                    this.mainMenuControl.displayGamePreferencesMenu();
+                    break;
                 case "H":
                     this.mainMenuControl.displayHelpMenu();
                     break;

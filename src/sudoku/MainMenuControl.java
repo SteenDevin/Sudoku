@@ -21,6 +21,12 @@ public class MainMenuControl {
        // gameMenu.getInput();
     }
     
+    public void displayGamePreferencesMenu() {
+    GamePreferencesMenuView preferencesMenu = new GamePreferencesMenuView();
+            preferencesMenu.getInput();
+    
+}
+    
     
     public Game create(String gameType) {
         Game game;
