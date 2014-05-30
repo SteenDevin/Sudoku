@@ -14,7 +14,8 @@ import java.util.Scanner;
  */
 public class GamePreferencesMenuView {
     Game game;
-    private GamePreferencesMenuControl gamePreferenceControl = new GamePreferencesMenuControl(game);
+    Player player;
+    private GamePreferencesMenuControl gamePreferenceControl;
 
     private final static String[][] menuItems = {
         {"D", "Change Dimensions of the Board"},
@@ -22,7 +23,9 @@ public class GamePreferencesMenuView {
         {"Q", "Return to game menu"}
     };
 
-    public GamePreferencesMenuView() {
+    public GamePreferencesMenuView(Game game) {
+      this.game = game;
+      gamePreferenceControl = new GamePreferencesMenuControl(game);
         
     }
 

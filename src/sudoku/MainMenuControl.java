@@ -12,6 +12,10 @@ package sudoku;
  */
 public class MainMenuControl {
     
+    private Game game;
+    private Player player;
+    
+    
     
     public void startGame() {
         
@@ -22,7 +26,7 @@ public class MainMenuControl {
     }
     
     public void displayGamePreferencesMenu() {
-    GamePreferencesMenuView preferencesMenu = new GamePreferencesMenuView();
+    GamePreferencesMenuView preferencesMenu = new GamePreferencesMenuView(this.game);
             preferencesMenu.getInput();
     
 }

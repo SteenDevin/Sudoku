@@ -15,10 +15,16 @@ public class GamePreferencesMenuControl {
     
     
     private Game game;
+    private Player player;
 
     public GamePreferencesMenuControl(Game game) {
-        this.game = game;
+       this.game = game;
     }
+    
+    public void getDifficulty() {
+        GetDifficultyView getDifficultyView = new GetDifficultyView(this.game);
+        String difficulty = getDifficultyView.getInput();
+    }  
 
     public Game getGame() {
         return game;
@@ -32,10 +38,8 @@ public class GamePreferencesMenuControl {
        System.out.println("\n\tgetDimensions called");
        return true;
     }   
-    public boolean getDifficulty() {
-        System.out.println("\n\tgetDifficulty called");
-    return true;
-    }  
+    
+   
     
 }
     

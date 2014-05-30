@@ -47,7 +47,7 @@ public class Sudoku {
     Sudoku ourGame = new Sudoku();
     ourGame.getName();
     ourGame.displayHelp();
-    
+        
     //ourGame.computeScore();
     MainMenuView mainMenu = new MainMenuView();
 

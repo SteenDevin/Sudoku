@@ -15,13 +15,16 @@ import java.util.Scanner;
 public class GetDifficultyView {
     
     private Game game;
+   
     
     
     public GetDifficultyView(Game game) {
-        this.game = game;
+        
+      this.game = game; 
+        
     }
     
-    public String getInput(Player player) {
+    public String getInput() {
         
         String newDifficulty = null;
         Scanner in = new Scanner(System.in);
@@ -29,7 +32,7 @@ public class GetDifficultyView {
         boolean valid = false;
         while (!valid) {
             
-            System.out.println("/n/t" + player.name
+            System.out.println("\n\t" + "Bob"
                     + ", enter how many numbers you want the board to start "
                     + "with.");
             
@@ -51,6 +54,7 @@ public class GetDifficultyView {
             if (num < 27 || num > 80) {
                 new SudokuError().displayError(
                         "Please enter a number between 27 and 80!");
+                continue;
             }
             valid = true;
         }
