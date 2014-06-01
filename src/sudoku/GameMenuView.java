@@ -14,19 +14,23 @@ import java.util.Scanner;
  */
 public class GameMenuView {
     
+    private Game game;
+    private GameMenuControl gameMenuControl;
+    
     private static final String[][] menuItems = {
+        {"D", "Display the board"},
         {"N", "New Game"},
         {"P", "Game Preferences"},
+        {"R", "Report stastistics"},
         {"H", "Help"},
-        {"X", "Exit Sudoku"}
+        {"Q", "Quit"}
     };
     
-    GameMenuControl mainMenuControl = new GameMenuControl();
-    
-    public GameMenuView() {
-        
+    public GameMenuView(Game game) {
+        this.game = game;
+        this.gameMenuControl = new GameMenuControl(game);
     }
-    
+       
     public void getInput() {
         
         String command;
@@ -40,20 +44,28 @@ public class GameMenuView {
             command = command.trim().toUpperCase();
             
             switch (command) {
+                case "D":
+                    gameMenuControl.displayBoard();
+                    break;
                 case "N":
-                    this.mainMenuControl.setGame(game game)
+                    gameMenuControl.startNewGame();
                     break;
-             
+                case "P":
+                    gameMenuControl.displayPreferencesMenu();
+                    break;
+                case "R":
+                    gameMenuControl.displayStatistics();
+                    break;
                 case "H":
-                    this.mainMenuControl.displayHelpMenu();
+                    gameMenuControl.displayHelpMenu();
                     break;
-                case "X":
+                case "Q":
                     break;
                 default:
                     new SudokuError().displayError("Invalid command. Please enter a valid command.");
                     continue;
             }
-        } while (!command.equals("X"));
+        } while (!command.equals("Q"));
         
         return;
     }

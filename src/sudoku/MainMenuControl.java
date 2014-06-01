@@ -11,45 +11,34 @@ package sudoku;
  * @author dsteen
  */
 public class MainMenuControl {
-    
-    private Game game;
-    private Player player;
-    
-    
-    
+        
+        
     public void startGame() {
         
-        //Game game;
-        //game = this.create("New_Game");
-        //GameMenuView gameMenu = new GameMenuView();
-       // gameMenu.getInput();
+        Game game;
+        game = this.createGame("NEW_GAME");
+               
+        GameMenuView gameMenu = new GameMenuView(game);
+        gameMenu.getInput();  
     }
     
-    public void displayGamePreferencesMenu() {
-    GamePreferencesMenuView preferencesMenu = new GamePreferencesMenuView(this.game);
-            preferencesMenu.getInput();
-    
-}
-    
-    
-    public Game create(String gameType) {
-        Game game;
-        Player player;
+    private Game createGame(String gameType) {
+        
+        Game game = null;
         
         if (gameType == null) {
             new SudokuError().displayError("MainCommands - create: gameType is null");
             return null;
         }
         
-        game = new Game();
-        player = new Player();
-        player.setName("New Player");
-        
-        game.newPlayer = player;
-        
-        return game;                
+        if (gameType.equals(Game.NEW_GAME)) {
+            game = new Game(Game.NEW_GAME);
+        }
+        return game;
     }
     
+        
+        
     public void displayHelpMenu() {
         HelpMenuView helpMenu = new HelpMenuView();
         helpMenu.getInput();
