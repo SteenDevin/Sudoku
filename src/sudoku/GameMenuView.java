@@ -48,7 +48,7 @@ public class GameMenuView {
                     gameMenuControl.displayBoard();
                     break;
                 case "N":
-                    gameMenuControl.startNewGame();
+                    gameMenuControl.startNewGame();                    
                     break;
                 case "P":
                     gameMenuControl.displayPreferencesMenu();
