@@ -41,7 +41,7 @@ public class GameMenuView {
             
             switch (command) {
                 case "N":
-                    this.mainMenuControl.setGame(game game)
+                    this.mainMenuControl.setGame(game game);
                     break;
              
                 case "H":
