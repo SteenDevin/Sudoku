@@ -11,19 +11,20 @@ package sudoku;
  * @author A.J. Ilizaliturri
  */
 public class Location {
-    int row;
-    int column;
+    public int row;
+    public int column;
+    public Player player;
     
     public Location() {
         
     }
   
-    public void occupyLocation() {
-       System.out.println(" ");
+    public void occupyLocation(Player player) {
+       this.player = player;
     }
     
-    public void displayMarker() {
+    /*public void displayMarker() {
        System.out.println(" ");
     
-   }
+   }*/
 }

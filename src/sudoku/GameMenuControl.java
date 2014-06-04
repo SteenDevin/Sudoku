@@ -10,14 +10,41 @@ package sudoku;
  */
 public class GameMenuControl {
     
-    
     private Game game;
+    private Board board;
+    private BoardView boardView = new BoardView();
+    
 
     public GameMenuControl(Game game) {
         this.game = game;
+        this.board = game.board;
+    }
+    
+    public void displayBoard() {
+        boardView.displayBoard(this.board);
+    }
+    
+    public void startNewGame() {
+        this.game.start();
+        this.displayBoard();
+    }
+    
+     public void displayPreferencesMenu() {
+         GamePreferencesMenuView preferencesMenu = new GamePreferencesMenuView(this.game);
+            preferencesMenu.getInput();
+    
+    }
+     
+    public void displayStatistics() {
+        
+    }
+    
+    public void displayHelpMenu() {
+        HelpMenuView helpMenu = new HelpMenuView();
+        helpMenu.getInput();
     }
 
-    public Game getGame() {
+    /*public Game getGame() {
         return game;
     }
 
@@ -32,8 +59,12 @@ public class GameMenuControl {
     public boolean getDifficulty() {
         System.out.println("\n\tgetDifficulty called");
     return true;
-    }
-}
+    }*/  
+    
+
+
+    
+
    /* private boolean gameOver(Player player) {
         if  (this.Complete()) {
            this.game.status = Game.COMPLETE;

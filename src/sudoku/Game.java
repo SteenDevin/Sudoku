@@ -13,8 +13,10 @@ package sudoku;
 public class Game {
     
     public final static String NEW_PLAYER = "NEW_PLAYER";
+    public static final String NEW_GAME = "NEW_GAME";
     
     public Player newPlayer;
+    public String gameType;
     String difficulty = "Easy";
     Player defaultPlayer;
     String status;
@@ -27,6 +29,13 @@ public class Game {
                 
     }
     
+    public Game(String gameType) {
+        this();
+        
+        this.gameType = gameType;
+        this.board = new Board(9,9);
+    }
+    
     public void displayPlayer() {
         System.out.println("\n\tThis is a temporary profile while the "
                            + "game is under construction.");
@@ -37,7 +46,7 @@ public class Game {
         System.out.println("\n\tThe default game difficulty is set to "
         + difficulty);
     }
-    
+       
     /**
      *
      * @param currentScore
@@ -66,5 +75,9 @@ public class Game {
             System.out.println("Your score was " + currentScore);
         }
         System.out.println("The High Score is " + bestScore);
+    }
+
+    void start() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
