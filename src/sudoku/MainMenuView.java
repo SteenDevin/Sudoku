@@ -15,7 +15,7 @@ import java.util.Scanner;
 public class MainMenuView {
     
     private static final String[][] menuItems = {
-        
+        {"N", "Enter the names of the players"},
         {"G", "Game Menu"},
         {"H", "Help"},
         {"X", "Exit Sudoku"}
@@ -40,7 +40,9 @@ public class MainMenuView {
             command = command.trim().toUpperCase();
             
             switch (command) {
-                
+                case "N":
+                    this.mainMenuControl.createPlayerList();
+                    break;                
                 case "G":
                     this.mainMenuControl.startGame();
                 case "H":

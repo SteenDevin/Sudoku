@@ -43,7 +43,7 @@ public class GameMenuControl {
         HelpMenuView helpMenu = new HelpMenuView();
         helpMenu.getInput();
     }
-
+}
     /*public Game getGame() {
         return game;
     }

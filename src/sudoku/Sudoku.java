@@ -16,7 +16,7 @@ public class Sudoku {
     
     
    //Instant variable
-    String name;
+    private static Player[] playerList;
     
     String instructions = 
               "\n\t*******************************************************"
@@ -32,6 +32,18 @@ public class Sudoku {
     //int seconds_left;
     
     //int score_multiplier;
+    
+    public Sudoku() {
+    
+    }
+    
+    public static Player[] getPlayerList() {
+        return playerList;
+    }
+
+    public static void setPlayerList(Player[] playerList) {
+        Sudoku.playerList = playerList;
+    }
             
 
           
@@ -45,7 +57,6 @@ public class Sudoku {
      */
     public static void main(String[] args) {
     Sudoku ourGame = new Sudoku();
-    ourGame.getName();
     ourGame.displayHelp();
         
     //ourGame.computeScore();
@@ -66,13 +77,9 @@ public class Sudoku {
         
     }*/
     
-    public void getName() {
-       Scanner input = new Scanner(System.in);
-       System.out.println("Enter Your Name: ");
-       this.name = input.next();
-    }
+    
     public void displayHelp() {
-    System.out.println("\n Welcome " + this.name + "\n");
+    //System.out.println("\n Welcome " + this.name + "\n");
     System.out.println(this.instructions);
     
     }
