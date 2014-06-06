@@ -79,6 +79,7 @@ public class GetPlayersListView {
 
         newNameList = this.sortList(newNameList);
         this.displayNameList(newNameList); // display the list of names
+        this.getNameLocation(newNameList);
         
         return newNameList;
     }
@@ -121,7 +122,7 @@ public class GetPlayersListView {
     
     public void displayNameList(String[] names) {
         System.out.println("\n\t===============================================================");
-        System.out.println("\tHere is the ist of players in the game");
+        System.out.println("\tHere is the list of players in the game");
 
         for (int i = 0; i < names.length; i++) {
             if (names[i] == null) {
@@ -132,6 +133,21 @@ public class GetPlayersListView {
             System.out.println("\t   " + namePosition + "\t" + names[i]);
         }
         System.out.println("\t===============================================================\n");
+        
+               
+    }
+    
+    public void getNameLocation(String[] names) {
+        String playerName = "Bob";
+        int counter = 0;
+        for (String x: names){
+             counter++;
+            if(x.equals(playerName)){
+                System.out.println("\tThe name Bob is in index position number " + (counter - 1) + ".");
+                return;
+            }          
+        }
+        System.out.println("\tThe name Bob does not appear in the array.");
     }
     
 }
