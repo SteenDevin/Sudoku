@@ -78,6 +78,8 @@ public class Game {
     }
 
     void start() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        SudokuGenerator sg = new SudokuGenerator();
+		sg.nextBoard(35);
+		sg.print();
     }
 }

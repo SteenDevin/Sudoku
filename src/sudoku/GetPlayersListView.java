@@ -80,6 +80,7 @@ public class GetPlayersListView {
         newNameList = this.sortList(newNameList);
         this.displayNameList(newNameList); // display the list of names
         this.getNameLocation(newNameList);
+        //this.displayTopPlayer(newNameList);
         
         return newNameList;
     }
@@ -149,21 +150,24 @@ public class GetPlayersListView {
         }
         System.out.println("\tThe name Bob does not appear in the array.");
     }
-   // public void displayTopPlayer(String[] names) {
-   //     System.out.println("\n\t===============================================================");
-   //     System.out.println("\tHere is the current top player");
+    /*public void displayTopPlayer(String[] names) {
+        System.out.println("\n\t===============================================================");
+        System.out.println("\tHere is the current top player");
+        int i = 0;
 
-    //    for (int i = 0; i < names.length; i++) {
-    //        if (names[i] == null) {
-    //            break;
-    //        }
+        for (; i < names.length; i++) {
+            if (names[i] == null) {
+                break;
+            }
                 
-    //        int namePosition = i;
-    //        System.out.println("\t   " + namePosition + "\t" + names[i]);
-    //    }
-     //   System.out.println("\tThis player is the top plyer out of" + (i) "player(s)  \n");
-        
+            int namePosition = i;
+            System.out.println("\t   " + namePosition + "\t" + names[i]);
                
-  //  }
-  //  }
+        
+        }
+        
+        System.out.println("\tThis player is the top plyer out of" + i + "player(s)  \n");
+               
+    }*/
+}
 

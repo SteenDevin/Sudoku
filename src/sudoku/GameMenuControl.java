@@ -26,7 +26,7 @@ public class GameMenuControl {
     
     public void startNewGame() {
         this.game.start();
-        this.displayBoard();
+        
     }
     
      public void displayPreferencesMenu() {
