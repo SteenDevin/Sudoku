@@ -10,26 +10,7 @@ package sudoku;
  *
  * @author dsteen
  */
-public class MainMenuControl {
-    
-    public void createPlayerList() {
-        GetPlayersListView getPlayersListView = new GetPlayersListView();
-        String[] listOfPlayersNames = getPlayersListView.getInput();
-        
-        // create the list of players named
-        Player[] playerList = new Player[listOfPlayersNames.length];
-                               
-        for (int i = 0; i < playerList.length; i++) {
-            String playersName = listOfPlayersNames[i];
-            Player newPlayer = new Player();
-            newPlayer.name = playersName;
-            // add new player to player list
-            playerList[i] = newPlayer;          
-        }
-        
-        Sudoku.setPlayerList(playerList);
-        
-    }
+public class MainMenuControl {    
         
         
     public void startGame() {
