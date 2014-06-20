@@ -4,25 +4,77 @@
 
 package sudoku;
 
+import java.io.Serializable;
+
 /**
  *
  * @author dsteen
  */
-public class Player {
+public class Player implements Serializable {
    
-    String name = "Bob Marley";
-    double age;
-    String playerType;
-    public long completes = 0;
-    public long incompletes = 0;
-    public long correct = 77;
-    public long incorrect = 4;
+    private String name;
+    private double age;
+    private String playerType;
+    private long completes;
+    private long incompletes;
+    private long correct;
+    private long incorrect;
     
             
     
     public Player() {
         
     }
+
+    public double getAge() {
+        return age;
+    }
+
+    public void setAge(double age) {
+        this.age = age;
+    }
+
+    public String getPlayerType() {
+        return playerType;
+    }
+
+    public void setPlayerType(String playerType) {
+        this.playerType = playerType;
+    }
+
+    public long getCompletes() {
+        return completes;
+    }
+
+    public void setCompletes(long completes) {
+        this.completes = completes;
+    }
+
+    public long getIncompletes() {
+        return incompletes;
+    }
+
+    public void setIncompletes(long incompletes) {
+        this.incompletes = incompletes;
+    }
+
+    public long getCorrect() {
+        return correct;
+    }
+
+    public void setCorrect(long correct) {
+        this.correct = correct;
+    }
+
+    public long getIncorrect() {
+        return incorrect;
+    }
+
+    public void setIncorrect(long incorrect) {
+        this.incorrect = incorrect;
+    }
+    
+    
     
     public void displayName(){
         System.out.println("\t\tHello, I'm the default player, " + name);

@@ -16,7 +16,8 @@ public class Sudoku {
     
     
    //Instant variable
-    private static Player[] playerList;
+    private static String[] playerList;
+    private static final Scanner inFile = new Scanner(System.in);
     
     String instructions = 
               "\n\t*******************************************************"
@@ -27,21 +28,21 @@ public class Sudoku {
             + "\n\t*         No duplicates in any instances!             *"
             + "\n\t*            Good Luck and Have Fun!!!                *"
             + "\n\t*******************************************************"
-            + "\n";
-    
-    //int seconds_left;
-    
-    //int score_multiplier;
+            + "\n";       
     
     public Sudoku() {
     
     }
     
-    public static Player[] getPlayerList() {
+    public static Scanner getInputFile() {
+        return Sudoku.inFile;
+    }
+    
+    public static String[] getPlayerList() {
         return playerList;
     }
 
-    public static void setPlayerList(Player[] playerList) {
+    public static void setPlayerList(String[] playerList) {
         Sudoku.playerList = playerList;
     }
             
@@ -56,32 +57,84 @@ public class Sudoku {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-    Sudoku ourGame = new Sudoku();
-    ourGame.displayHelp();
+    Sudoku sudoku = new Sudoku();
+    sudoku.displayHelp();
+    Sudoku.playerList = sudoku.getPlayerNames();
         
     //ourGame.computeScore();
     MainMenuView mainMenu = new MainMenuView();
 
         mainMenu.getInput();
-    
-   
-    
-   /* Player player = new Player();
-    player.getPlayerStatistics();
-    Board board = new Board();
-    board.displayBrd();
-    player.getErrorCheck();*/
-  }
-  
-   /* public void getCharacter(){
-        
-    }*/
-    
+        Sudoku.inFile.close();
+  } 
     
     public void displayHelp() {
-    //System.out.println("\n Welcome " + this.name + "\n");
-    System.out.println(this.instructions);
+        System.out.println(this.instructions);
     
+    }
+    
+    private String[] getPlayerNames() {
+        
+        String[] playerNames = new String[10];
+        Scanner inFile = Sudoku.getInputFile();
+        
+        System.out.println("\n\t---------------------------------------------------------------");
+        System.out.println("\t Enter a list of names of those who will be playing Sudoku. ");
+        System.out.println("\t---------------------------------------------------------------");
+        
+        int playerIndex = 0;
+        boolean done = false;
+        while (playerIndex < 10  && !done) { 
+            System.out.println("\tPlease enter the name of a player or enter \"Q\" to quit.");
+            String name;
+            name = inFile.nextLine();
+            name = name.trim();
+
+            if (name.length() < 1) {
+                new SudokuError().displayError("\tA name must be at least one character long. Try again.");
+                continue;
+            }
+
+            if (name.toUpperCase().equals("Q")) { // quit?
+                done = true;
+                break;
+            } 
+            
+            // add name to list of player names
+            playerNames[playerIndex] = name;
+            playerIndex++;
+
+        }
+        
+        String[] newNameList = new String[playerIndex];
+        for (int i = 0; i < playerIndex; i++) {
+            newNameList[i] = playerNames[i];          
+        }
+        
+        sortList(newNameList);
+        
+        return newNameList;
+    }
+    
+    public String[] sortList(String[] names) {
+        String tmpName;
+        boolean notDone = true;
+        while(notDone) {
+            
+            notDone = false; // assume that you done
+            for (int i = 0; i < names.length-1; i++) {
+                int compareResult = names[i].compareTo(names[i+1]);
+                if (compareResult > 0) {
+                    // swap names
+                    tmpName = names[i];
+                    names[i] = names[i+1];
+                    names[i+1] = tmpName;
+                    notDone = true;
+                } 
+            }
+        }
+
+        return names;
     }
     
    /*public void computeScore() {

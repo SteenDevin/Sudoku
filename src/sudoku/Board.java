@@ -10,17 +10,40 @@ package sudoku;
  *
  * @author Ethan Nelson
  */
-public class Board {
-    //String size = "9x9";
-    //String color = "Default";
-    public int rowCount = 9;
-    public int columnCount = 9;
+public class Board {    
+    private int rowCount = 9;
+    private int columnCount = 9;
     
     public Location[][] boardLocations;
     
     public Board() {
         
     }
+
+    public int getRowCount() {
+        return rowCount;
+    }
+
+    public void setRowCount(int rowCount) {
+        this.rowCount = rowCount;
+    }
+
+    public int getColumnCount() {
+        return columnCount;
+    }
+
+    public void setColumnCount(int columnCount) {
+        this.columnCount = columnCount;
+    }
+
+    public Location[][] getBoardLocations() {
+        return boardLocations;
+    }
+
+    public void setBoardLocations(Location[][] boardLocations) {
+        this.boardLocations = boardLocations;
+    }
+    
     
     public Board(int noRows, int noColumns) {
         
