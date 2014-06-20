@@ -6,7 +6,7 @@ package sudoku;
 
 /**
  *
- * @author jacksonrkj
+ * @author cherrylzh
  */
 public class Location {
     
