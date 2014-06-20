@@ -28,8 +28,7 @@ public class Sudoku {
             + "\n\t*         No duplicates in any instances!             *"
             + "\n\t*            Good Luck and Have Fun!!!                *"
             + "\n\t*******************************************************"
-            + "\n";
-       
+            + "\n";       
     
     public Sudoku() {
     
