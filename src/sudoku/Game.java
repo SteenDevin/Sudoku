@@ -1,8 +1,3 @@
-/*
- * This will contain the attributes and methods of the Game class.
- * I'm not too sure how or where the game difficulty setting will go so
- * I just included it in the Game class for now.
- */
 
 package sudoku;
 
@@ -37,9 +32,7 @@ public class Game {
     }
     
     public void displayPlayer() {
-        System.out.println("\n\tThis is a temporary profile while the "
-                           + "game is under construction.");
-        this.defaultPlayer.displayName();      
+       this.defaultPlayer.displayName();      
     }
      
     public void displayDifficulty() {
