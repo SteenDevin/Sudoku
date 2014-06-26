@@ -11,8 +11,8 @@ package sudoku;
  * @author Ethan Nelson
  */
 public class Board {    
-    private int rowCount = 9;
-    private int columnCount = 9;
+    int rowCount = 9;
+    int columnCount = 9;
     
     public Location[][] boardLocations;
     
