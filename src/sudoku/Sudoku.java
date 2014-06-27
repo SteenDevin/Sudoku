@@ -64,7 +64,7 @@ public class Sudoku {
     //ourGame.computeScore();
     MainMenuView mainMenu = new MainMenuView();
 
-        mainMenu.getInput();
+        mainMenu.executeCommands(null);
         Sudoku.inFile.close();
   } 
     

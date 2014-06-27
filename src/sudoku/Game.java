@@ -9,14 +9,16 @@ public class Game {
     
     public final static String NEW_PLAYER = "NEW_PLAYER";
     public static final String NEW_GAME = "NEW_GAME";
+    public static final String EXIT = "EXIT";
+    public static final String PLAYING = "PLAYING";
+    public static final String CONTINUE = "CONTINUE";
+    public Board board;
     
     public Player newPlayer;
     public String gameType;
     String difficulty = "Easy";
     Player defaultPlayer;
-    String status;
-    Board board;
-    
+    String status;   
     
     public Game() {
         
@@ -29,6 +31,14 @@ public class Game {
         
         this.gameType = gameType;
         this.board = new Board(9,9);
+    }
+    
+    public Board getBoard() {
+        return board;      
+    }
+    
+    public void setBoard(Board board) {
+        this.board = board;
     }
     
     public void displayPlayer() {

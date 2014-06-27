@@ -12,7 +12,7 @@ import java.util.Scanner;
  *
  * @author dsteen
  */
-public class MainMenuView {
+public class MainMenuView extends Menu{
     
     private static final String[][] menuItems = {        
         {"G", "Game Menu"},
@@ -23,20 +23,17 @@ public class MainMenuView {
     MainMenuControl mainMenuControl = new MainMenuControl();
     
     public MainMenuView() {
-        
+        super(MainMenuView.menuItems);        
     }
     
-    public void getInput() {
-        
-        String command;
-        Scanner inFile = new Scanner(System.in);
-        
+    @Override
+    public String executeCommands(Object object) {
+    
+        String gameStatus = Game.PLAYING;        
         do {
             this.display();
             
-            
-            command = inFile.nextLine();
-            command = command.trim().toUpperCase();
+            String command = this.getCommand();
             
             switch (command) {                               
                 case "G":
@@ -45,27 +42,12 @@ public class MainMenuView {
                     this.mainMenuControl.displayHelpMenu();
                     break;
                 case "X":
-                    break;
-                default:
-                    new SudokuError().displayError("Invalid command. Please enter a valid command.");
-                    continue;
+                    return Game.EXIT;
+                
             }
-        } while (!command.equals("X"));
+        } while (!gameStatus.equals(Game.EXIT));
         
-        return;
-    }
-    
-    
-    
-    
-    public final void display() {
-        System.out.println("\n\t===============================================================");
-        System.out.println("\tEnter the letter associated with one of the following commands:");
-
-        for (int i = 0; i < MainMenuView.menuItems.length; i++) {
-            System.out.println("\t   " + menuItems[i][0] + "\t" + menuItems[i][1]);
-        }
-        System.out.println("\t===============================================================\n");
-    }
+        return Game.EXIT;
+    }   
     
 }
