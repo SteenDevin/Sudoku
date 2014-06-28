@@ -12,6 +12,7 @@ public class Game {
     public static final String EXIT = "EXIT";
     public static final String PLAYING = "PLAYING";
     public static final String CONTINUE = "CONTINUE";
+    public static final String QUIT = "QUIT";
     public Board board;
     
     public Player newPlayer;

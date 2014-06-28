@@ -39,10 +39,7 @@ public class GameMenuControl {
         
     }
     
-    public void displayHelpMenu() {
-        HelpMenuView helpMenu = new HelpMenuView();
-        helpMenu.getInput();
-    }
+    
     
 }
    

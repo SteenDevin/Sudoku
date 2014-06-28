@@ -35,13 +35,6 @@ public class MainMenuControl {
             game = new Game(Game.NEW_GAME);
         }
         return game;
-    }
-    
-        
-        
-    public void displayHelpMenu() {
-        HelpMenuView helpMenu = new HelpMenuView();
-        helpMenu.getInput();
-    }
+    }    
     
 }

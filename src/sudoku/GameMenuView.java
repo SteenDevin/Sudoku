@@ -57,7 +57,8 @@ public class GameMenuView {
                     gameMenuControl.displayStatistics();
                     break;
                 case "H":
-                    gameMenuControl.displayHelpMenu();
+                    HelpMenuView helpMenu = Sudoku.getHelpMenu();
+                    helpMenu.executeCommands(null);
                     break;
                 case "Q":
                     break;

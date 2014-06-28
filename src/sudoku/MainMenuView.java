@@ -39,7 +39,8 @@ public class MainMenuView extends Menu{
                 case "G":
                     this.mainMenuControl.startGame();
                 case "H":
-                    this.mainMenuControl.displayHelpMenu();
+                    HelpMenuView helpMenu = Sudoku.getHelpMenu();
+                    helpMenu.executeCommands(null);
                     break;
                 case "X":
                     return Game.EXIT;
