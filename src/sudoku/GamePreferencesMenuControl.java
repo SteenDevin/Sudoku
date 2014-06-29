@@ -7,6 +7,10 @@
 package sudoku;
 
 
+import java.util.Scanner;
+
+
+
 /**
  *
  * @author Ethan Nelson

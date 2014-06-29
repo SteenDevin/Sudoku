@@ -25,7 +25,7 @@ public abstract class Menu {
     }
     
     
-    public abstract String executeCommands(Object object);
+    
     
     public String[][] getMenuItems() {
         return menuItems;

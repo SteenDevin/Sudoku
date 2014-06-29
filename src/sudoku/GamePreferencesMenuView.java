@@ -6,15 +6,17 @@
 
 package sudoku;
 
+
 import java.util.Scanner;
+
 
 /**
  *
  * @author Ethan Nelson
  */
-public class GamePreferencesMenuView {
-    Game game;
-    Player player;
+    public class GamePreferencesMenuView extends Menu {
+    private Game game;
+    private  Player player;
     private GamePreferencesMenuControl gamePreferenceControl;
 
     private final static String[][] menuItems = {
@@ -22,9 +24,9 @@ public class GamePreferencesMenuView {
         {"G", "Change Difficulty of the game"},
         {"Q", "Return to game menu"}
     };
-
+    
     public GamePreferencesMenuView(Game game) {
-      this.game = game;
+      super(GamePreferencesMenuView.menuItems);
       gamePreferenceControl = new GamePreferencesMenuControl(game);
         
     }
@@ -60,7 +62,7 @@ public class GamePreferencesMenuView {
     }
     
     
-        
+    @Override
     public final void display() {
         System.out.println("\n\t===============================================================");
         System.out.println("\tEnter the letter associated with one of the following commands:");
@@ -69,6 +71,7 @@ public class GamePreferencesMenuView {
             System.out.println("\t   " + menuItems[i][0] + "\t" + menuItems[i][1]);
         }
         System.out.println("\t===============================================================\n");
+  
     }
     
 }
