@@ -18,6 +18,7 @@ public class Sudoku {
    //Instant variable
     private static String[] playerList;
     private static final Scanner inFile = new Scanner(System.in);
+    private static final HelpMenuView helpMenu = new HelpMenuView();
     
     String instructions = 
               "\n\t*******************************************************"
@@ -36,6 +37,10 @@ public class Sudoku {
     
     public static Scanner getInputFile() {
         return Sudoku.inFile;
+    }
+    
+    public static HelpMenuView getHelpMenu() {
+        return Sudoku.helpMenu;
     }
     
     public static String[] getPlayerList() {
