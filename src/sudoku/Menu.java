@@ -36,7 +36,7 @@ public abstract class Menu {
     }
 
     
-    public final void display() {
+    public abstract void display() {
         System.out.println("\n\t===============================================================");
         System.out.println("\tEnter the letter associated with one of the following commands:");
 
