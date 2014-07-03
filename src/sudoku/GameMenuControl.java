@@ -31,8 +31,7 @@ public class GameMenuControl {
     
      public void displayPreferencesMenu() {
          GamePreferencesMenuView preferencesMenu = new GamePreferencesMenuView(this.game);
-            preferencesMenu.getInput();
-    
+                
     }
      
     public void displayStatistics() {

@@ -24,7 +24,7 @@ public abstract class Menu {
         this.menuItems = menuItems;
     }
     
-    
+    public abstract String executeCommands(Object object);
     
     
     public String[][] getMenuItems() {
@@ -36,7 +36,7 @@ public abstract class Menu {
     }
 
     
-    public abstract void display() {
+    public final void display() {
         System.out.println("\n\t===============================================================");
         System.out.println("\tEnter the letter associated with one of the following commands:");
 

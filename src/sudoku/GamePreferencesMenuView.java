@@ -15,63 +15,49 @@ import java.util.Scanner;
  * @author Ethan Nelson
  */
     public class GamePreferencesMenuView extends Menu {
-    private Game game;
-    private  Player player;
-    private GamePreferencesMenuControl gamePreferenceControl;
+    
+        private Game game;
+        private GamePreferencesMenuControl gamePreferenceCommands;
 
-    private final static String[][] menuItems = {
-        {"D", "Change Dimensions of the Board"},
-        {"G", "Change Difficulty of the game"},
-        {"Q", "Return to game menu"}
-    };
+        private final static String[][] menuItems = {            
+            {"G", "Change Difficulty of the game"},
+            {"Q", "Return to game menu"}
+        };
     
     public GamePreferencesMenuView(Game game) {
       super(GamePreferencesMenuView.menuItems);
-      gamePreferenceControl = new GamePreferencesMenuControl(game);
+      gamePreferenceCommands = new GamePreferencesMenuControl(game);
         
     }
 
-    
-    public void getInput() {       
-        String command;
-        Scanner inFile = new Scanner(System.in);
+    @Override
+    public String executeCommands(Object object) {
         
+        this.game = (Game) object;
+        this.gamePreferenceCommands.setGame(game);
+        
+        String gameStatus = Game.PLAYING;               
         do {
             this.display();
 
             // get commaned entered
-            command = inFile.nextLine();
-            command = command.trim().toUpperCase();
+            String command = this.getCommand();
             
-            switch (command) {
-                case "D":
-                    this.gamePreferenceControl.getDimensions();
-                    break;
+            switch (command) {                
                 case "G":
-                    this.gamePreferenceControl.getDifficulty();
+                    getDifficulty(this.game);
                     break;
                 case "Q":
-                    break;
-                default: 
-                    new SudokuError().displayError("Invalid command. Please enter a valid command.");
-                    continue;
+                    return Game.QUIT;                
             }
-        } while (!command.equals("Q"));
+        } while (!gameStatus.equals(Game.QUIT));
 
-        return;
-    }
+        return gameStatus;
+    }    
     
-    
-    @Override
-    public final void display() {
-        System.out.println("\n\t===============================================================");
-        System.out.println("\tEnter the letter associated with one of the following commands:");
-
-        for (int i = 0; i < GamePreferencesMenuView.menuItems.length; i++) {
-            System.out.println("\t   " + menuItems[i][0] + "\t" + menuItems[i][1]);
-        }
-        System.out.println("\t===============================================================\n");
-  
-    }
+     public void getDifficulty(Game game) {
+        GetDifficultyView getDifficultyView = new GetDifficultyView(this.game);
+        String difficulty = getDifficultyView.getInput();
+    }  
     
 }
