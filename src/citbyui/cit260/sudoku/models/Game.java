@@ -10,11 +10,11 @@ import citbyui.cit260.sudoku.models.Board;
 public class Game {
     
     public final static String NEW_PLAYER = "NEW_PLAYER";
-    public static final String NEW_GAME = "NEW_GAME";
-    public static final String EXIT = "EXIT";
-    public static final String PLAYING = "PLAYING";
-    public static final String CONTINUE = "CONTINUE";
-    public static final String QUIT = "QUIT";
+    public final static String NEW_GAME = "NEW_GAME";
+    public final static String EXIT = "EXIT";
+    public final static String PLAYING = "PLAYING";
+    public final static String CONTINUE = "CONTINUE";
+    public final static String QUIT = "QUIT";
     public Board board;
     
     public Player newPlayer;
