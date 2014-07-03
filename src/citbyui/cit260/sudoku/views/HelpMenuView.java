@@ -4,9 +4,10 @@
  * and open the template in the editor.
  */
 
-package sudoku;
+package citbyui.cit260.sudoku.views;
 
 import java.util.Scanner;
+import citbyui.cit260.sudoku.models.Game;
 
 /**
  *
@@ -33,7 +34,7 @@ public class HelpMenuView extends Menu {
         super(HelpMenuView.menuItems);        
     }
     
-    @Override
+    
     public String executeCommands(Object object){
         
         String gameStatus = Game.PLAYING;                

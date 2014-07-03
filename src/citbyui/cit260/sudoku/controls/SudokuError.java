@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package sudoku;
+package citbyui.cit260.sudoku.controls;
 
 /**
  *

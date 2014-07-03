@@ -2,7 +2,7 @@
  * This will contain the attributes and methods of the Player class.
  */
 
-package sudoku;
+package citbyui.cit260.sudoku.models;
 
 import java.io.Serializable;
 

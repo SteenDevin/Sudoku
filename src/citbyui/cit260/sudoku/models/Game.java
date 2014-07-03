@@ -1,5 +1,7 @@
 
-package sudoku;
+package citbyui.cit260.sudoku.models;
+
+import citbyui.cit260.sudoku.models.Board;
 
 /**
  *
@@ -81,7 +83,7 @@ public class Game {
         System.out.println("The High Score is " + bestScore);
     }
 
-    void start() {
+    public void start() {
         SudokuGenerator sg = new SudokuGenerator();
 		sg.nextBoard(35);
 		sg.print();

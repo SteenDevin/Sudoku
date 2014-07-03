@@ -2,10 +2,12 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package sudoku;
+package citbyui.cit260.sudoku.views;
 
 import java.awt.Point;
 import java.util.Scanner;
+import citbyui.cit260.sudoku.models.Board;
+import citbyui.cit260.sudoku.models.Game;
     
 /**
  *

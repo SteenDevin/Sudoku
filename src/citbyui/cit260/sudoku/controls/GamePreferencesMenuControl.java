@@ -4,10 +4,13 @@
  * and open the template in the editor.
  */
 
-package sudoku;
+package citbyui.cit260.sudoku.controls;
 
 
+import citbyui.cit260.sudoku.views.GetDifficultyView;
 import java.util.Scanner;
+import citbyui.cit260.sudoku.models.Game;
+import citbyui.cit260.sudoku.models.Player;
 
 
 

@@ -4,12 +4,13 @@
  * and open the template in the editor.
  */
 
-package sudoku;
+package citbyui.cit260.sudoku.interfaces;
 
 /**
  *
- * @author Cherrylzh
+ * @author dsteen
  */
-interface Serialzable {
+public interface DisplayInfo {
     
+    public void display();
 }

@@ -2,10 +2,13 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package sudoku;
+package citbyui.cit260.sudoku.controls;
 
 
+import citbyui.cit260.sudoku.views.GetDifficultyView;
+import citbyui.cit260.sudoku.controls.SudokuError;
 import java.util.Scanner;
+import citbyui.cit260.sudoku.models.Game;
 
 /**
  *
@@ -32,7 +35,7 @@ public class GetDifficultyControl  {
     }
 
     
-    public void getInput() {       
+    /*public void getInput() {       
         String command;
         Scanner inFile = new Scanner(System.in);
         
@@ -62,7 +65,7 @@ public class GetDifficultyControl  {
         } while (!command.equals("Q"));
 
         return;
-    }
+    }*/
     
     
         

@@ -4,9 +4,11 @@
  * and open the template in the editor.
  */
 
-package sudoku;
+package citbyui.cit260.sudoku.controls;
 
 import java.util.Scanner;
+import citbyui.cit260.sudoku.views.HelpMenuView;
+import citbyui.cit260.sudoku.views.MainMenuView;
 
 /**
  *

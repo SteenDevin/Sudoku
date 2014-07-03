@@ -4,15 +4,15 @@
  * and open the template in the editor.
  */
 
-package sudoku;
+package citbyui.cit260.sudoku.models;
 
 /**
  *
  * @author Ethan Nelson
  */
 public class Board {    
-    int rowCount = 9;
-    int columnCount = 9;
+    public int rowCount = 9;
+    public int columnCount = 9;
     
     public Location[][] boardLocations;
     

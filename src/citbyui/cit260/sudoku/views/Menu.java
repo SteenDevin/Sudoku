@@ -4,15 +4,19 @@
  * and open the template in the editor.
  */
 
-package sudoku;
+package citbyui.cit260.sudoku.views;
 
+import citbyui.cit260.sudoku.controls.Sudoku;
+import citbyui.cit260.sudoku.controls.SudokuError;
+import citbyui.cit260.sudoku.interfaces.DisplayInfo;
+import citbyui.cit260.sudoku.interfaces.EnterInfo;
 import java.util.Scanner;
 
 /**
  *
  * @author dsteen
  */
-public abstract class Menu {
+public class Menu implements DisplayInfo, EnterInfo{
 
     private String[][] menuItems = null;
 
@@ -22,9 +26,8 @@ public abstract class Menu {
     public Menu(String[][] menuItems) {
         this();
         this.menuItems = menuItems;
-    }
+    }   
     
-    public abstract String executeCommands(Object object);
     
     
     public String[][] getMenuItems() {
@@ -36,6 +39,7 @@ public abstract class Menu {
     }
 
     
+    @Override
     public final void display() {
         System.out.println("\n\t===============================================================");
         System.out.println("\tEnter the letter associated with one of the following commands:");
@@ -74,6 +78,11 @@ public abstract class Menu {
         } while (!valid);
         
         return command;
+    }
+
+    @Override
+    public void getInput() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 

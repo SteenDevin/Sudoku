@@ -4,13 +4,15 @@
  * and open the template in the editor.
  */
 
-package sudoku;
+package citbyui.cit260.sudoku.models;
+
+
 
 /**
  *
  * @author Cherrylzh
  */
-public class Character implements Serialzable{
+public class Character{
 
     private double characters;
 
