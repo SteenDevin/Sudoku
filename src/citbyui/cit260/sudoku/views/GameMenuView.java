@@ -6,7 +6,7 @@
 
 package citbyui.cit260.sudoku.views;
 
-import citbyui.cit260.sudoku.views.HelpMenuView;
+
 import citbyui.cit260.sudoku.controls.SudokuError;
 import citbyui.cit260.sudoku.controls.Sudoku;
 import java.util.Scanner;

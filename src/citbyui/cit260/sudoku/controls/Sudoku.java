@@ -65,17 +65,24 @@ public class Sudoku {
      */
     public static void main(String[] args) {
     Sudoku sudoku = new Sudoku();
-    sudoku.displayHelp();
+    Sudoku.displayHelp();
     Sudoku.playerList = sudoku.getPlayerNames();
         
     //ourGame.computeScore();
     MainMenuView mainMenu = new MainMenuView();
-
-        mainMenu.executeCommands(null);
-        Sudoku.inFile.close();
-  } 
+     try {
+            mainMenu.getInput(null);
+        } 
+        catch (SudokuException ex) {
+            System.out.println(ex.getMessage());
+        }
+        finally {
+            Sudoku.inFile.close();
+        }
+    }
+      
     
-    public void displayHelp() {
+    private void display() {
         System.out.println(this.instructions);
     
     }

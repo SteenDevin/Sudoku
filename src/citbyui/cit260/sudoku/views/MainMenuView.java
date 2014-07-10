@@ -8,7 +8,7 @@ package citbyui.cit260.sudoku.views;
 
 import citbyui.cit260.sudoku.controls.MainMenuControl;
 import citbyui.cit260.sudoku.controls.Sudoku;
-import java.util.Scanner;
+
 import citbyui.cit260.sudoku.models.Game;
 
 /**
