@@ -8,14 +8,17 @@ package citbyui.cit260.sudoku.views;
 
 import citbyui.cit260.sudoku.controls.MainMenuControl;
 import citbyui.cit260.sudoku.controls.Sudoku;
-
+import citbyui.cit260.sudoku.enums.StatusType;
+import citbyui.cit260.sudoku.exceptions.SudokuException;
+import citbyui.cit260.sudoku.interfaces.EnterInfo;
 import citbyui.cit260.sudoku.models.Game;
+import java.util.Scanner;
 
 /**
  *
  * @author dsteen
  */
-public class MainMenuView extends Menu{
+public class MainMenuView extends Menu implements EnterInfo {
     
     private static final String[][] menuItems = {        
         {"G", "Game Menu"},
@@ -29,12 +32,13 @@ public class MainMenuView extends Menu{
         super(MainMenuView.menuItems);        
     }
     
+    @Override
+    public StatusType getInput (Object object) {
     
-    public String executeCommands(Object object) {
-    
-        String gameStatus = Game.PLAYING;        
+        String gameStatus = "PLAYING";        
         do {
-            this.display();
+            try{
+                this.display();
             
             String command = this.getCommand();
             
@@ -43,15 +47,21 @@ public class MainMenuView extends Menu{
                     this.mainMenuControl.startGame();
                 case "H":
                     HelpMenuView helpMenu = Sudoku.getHelpMenu();
-                    helpMenu.executeCommands(null);
+                    helpMenu.getInput(null);
                     break;
                 case "X":
-                    return Game.EXIT;
+                    return StatusType.EXIT;
                 
             }
-        } while (!gameStatus.equals(Game.EXIT));
+            }
+            catch (SudokuException ex) {
+                System.out.println("\n" + ex.getMessage());
+            }
+        } while (!gameStatus.equals("EXIT"));
         
-        return Game.EXIT;
-    }   
+        return StatusType.EXIT;
+    }    
+    
+    
     
 }

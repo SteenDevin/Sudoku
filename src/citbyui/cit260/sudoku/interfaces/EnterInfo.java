@@ -5,12 +5,11 @@
  */
 
 package citbyui.cit260.sudoku.interfaces;
-
 /**
  *
  * @author dsteen
  */
 public interface EnterInfo {
     
-    public void getInput();
+    Object getInput(Object object);
 }

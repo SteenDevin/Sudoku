@@ -9,6 +9,7 @@ package citbyui.cit260.sudoku.controls;
 import java.util.Scanner;
 import citbyui.cit260.sudoku.views.HelpMenuView;
 import citbyui.cit260.sudoku.views.MainMenuView;
+import citbyui.cit260.sudoku.exceptions.SudokuException;
 
 /**
  *
@@ -65,20 +66,12 @@ public class Sudoku {
      */
     public static void main(String[] args) {
     Sudoku sudoku = new Sudoku();
-    Sudoku.displayHelp();
+    sudoku.display();
     Sudoku.playerList = sudoku.getPlayerNames();
         
-    //ourGame.computeScore();
+    
     MainMenuView mainMenu = new MainMenuView();
-     try {
-            mainMenu.getInput(null);
-        } 
-        catch (SudokuException ex) {
-            System.out.println(ex.getMessage());
-        }
-        finally {
-            Sudoku.inFile.close();
-        }
+    mainMenu.getInput(null);
     }
       
     

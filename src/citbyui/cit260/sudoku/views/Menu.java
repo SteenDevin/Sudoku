@@ -7,7 +7,9 @@
 package citbyui.cit260.sudoku.views;
 
 import citbyui.cit260.sudoku.controls.Sudoku;
-import citbyui.cit260.sudoku.controls.SudokuError;
+import citbyui.cit260.sudoku.exceptions.MenuException;
+import citbyui.cit260.sudoku.enums.ErrorType;
+import citbyui.cit260.sudoku.exceptions.SudokuException;
 import citbyui.cit260.sudoku.interfaces.DisplayInfo;
 import citbyui.cit260.sudoku.interfaces.EnterInfo;
 import java.util.Scanner;
@@ -16,7 +18,7 @@ import java.util.Scanner;
  *
  * @author dsteen
  */
-public class Menu implements DisplayInfo, EnterInfo{
+public abstract class Menu {
 
     private String[][] menuItems = null;
 
@@ -39,7 +41,7 @@ public class Menu implements DisplayInfo, EnterInfo{
     }
 
     
-    @Override
+    
     public final void display() {
         System.out.println("\n\t===============================================================");
         System.out.println("\tEnter the letter associated with one of the following commands:");
@@ -61,7 +63,7 @@ public class Menu implements DisplayInfo, EnterInfo{
         return false;
     }
 
-    protected final String getCommand() {
+    protected final String getCommand() throws SudokuException {
 
         Scanner inFile = Sudoku.getInputFile();
         String command;
@@ -71,19 +73,13 @@ public class Menu implements DisplayInfo, EnterInfo{
             command = command.trim().toUpperCase();
             valid = validCommand(command);
             if (!validCommand(command)) {
-                new SudokuError().displayError("Invalid command. Please enter a valid command.");
-                continue;
+                throw new SudokuException(ErrorType.ERROR105.getMessage());                
             }
-                
-        } while (!valid);
-        
-        return command;
+            return command;    
+        } while (!valid);        
     }
 
-    @Override
-    public void getInput() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
 
 
 }

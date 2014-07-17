@@ -11,13 +11,19 @@ import citbyui.cit260.sudoku.views.GetDifficultyView;
 import java.util.Scanner;
 import citbyui.cit260.sudoku.models.Game;
 import citbyui.cit260.sudoku.controls.GamePreferencesMenuControl;
+import citbyui.cit260.sudoku.exceptions.SudokuException;
+import citbyui.cit260.sudoku.enums.ErrorType;
+import citbyui.cit260.sudoku.enums.StatusType;
+import citbyui.cit260.sudoku.interfaces.EnterInfo;
+
+
 
 
 /**
  *
  * @author Ethan Nelson
  */
-    public class GamePreferencesMenuView extends Menu {
+    public class GamePreferencesMenuView extends Menu implements EnterInfo{
     
         private Game game;
         private GamePreferencesMenuControl gamePreferenceCommands;
@@ -33,14 +39,15 @@ import citbyui.cit260.sudoku.controls.GamePreferencesMenuControl;
         
     }
 
-    
-    public String executeCommands(Object object) {
+    @Override
+    public StatusType getInput(Object object) {
         
         this.game = (Game) object;
         this.gamePreferenceCommands.setGame(game);
         
-        String gameStatus = Game.PLAYING;               
+       StatusType gameStatus = StatusType.PLAYING;               
         do {
+            try {
             this.display();
 
             // get commaned entered
@@ -51,9 +58,12 @@ import citbyui.cit260.sudoku.controls.GamePreferencesMenuControl;
                     getDifficulty(this.game);
                     break;
                 case "Q":
-                    return Game.QUIT;                
+                    return StatusType.QUIT;                
             }
-        } while (!gameStatus.equals(Game.QUIT));
+            }catch (SudokuException ex) {
+                System.out.println("\n\t" + ex.getMessage());
+            }
+        } while (!gameStatus.equals(StatusType.QUIT));
 
         return gameStatus;
     }    

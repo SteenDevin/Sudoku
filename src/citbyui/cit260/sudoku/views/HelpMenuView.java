@@ -8,12 +8,17 @@ package citbyui.cit260.sudoku.views;
 
 import java.util.Scanner;
 import citbyui.cit260.sudoku.models.Game;
+import citbyui.cit260.sudoku.enums.StatusType;
+import citbyui.cit260.sudoku.interfaces.EnterInfo;
+import citbyui.cit260.sudoku.exceptions.SudokuException;
+import citbyui.cit260.sudoku.exceptions.MenuException;
+
 
 /**
  *
  * @author dsteen
  */
-public class HelpMenuView extends Menu {
+public class HelpMenuView extends Menu implements EnterInfo {
     
     public static final String BOARD = "BOARD";
     public static final String GAME = "GAME";
@@ -34,11 +39,12 @@ public class HelpMenuView extends Menu {
         super(HelpMenuView.menuItems);        
     }
     
-    
-    public String executeCommands(Object object){
+    @Override
+    public StatusType getInput(Object object){
         
-        String gameStatus = Game.PLAYING;                
+        StatusType gameStatus = StatusType.PLAYING;                
         do {
+            try{
             
             this.display(); // display the menu
             
@@ -59,9 +65,12 @@ public class HelpMenuView extends Menu {
                     this.displayHelp(HelpMenuView.MARKER);
                     break;
                 case "Q": 
-                    return Game.QUIT;                
+                    return StatusType.QUIT;                
             }
-        } while (!gameStatus.equals(Game.QUIT));  
+            }catch (SudokuException ex) {
+                System.out.println("\n\t" + ex.getMessage());
+            }
+        } while (!gameStatus.equals(StatusType.QUIT));  
         
          return gameStatus;
     }

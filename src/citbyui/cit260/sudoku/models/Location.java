@@ -10,7 +10,7 @@ package citbyui.cit260.sudoku.models;
  */
 
         
-    public void occupyLocation(Player player, int row, int column) throws GameException {
+    /*public void occupyLocation(Player player, int row, int column) throws GameException {
         // subtract 1 from row and column number because the array starts a position 0
 
          Player playerAtLocation = this.boardLocations[row][column];
@@ -21,7 +21,7 @@ package citbyui.cit260.sudoku.models;
         this.boardLocations[row][column] = player;
     
         
-    }
+    }*/
     
 public class Location {
     
@@ -32,3 +32,4 @@ public class Location {
 
     Location() {
     }
+}

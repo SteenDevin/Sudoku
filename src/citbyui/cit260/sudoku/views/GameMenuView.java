@@ -63,7 +63,7 @@ public class GameMenuView {
                     break;
                 case "H":
                     HelpMenuView helpMenu = Sudoku.getHelpMenu();
-                    helpMenu.executeCommands(null);
+                    helpMenu.getInput(null);
                     break;
                 case "Q":
                     break;
