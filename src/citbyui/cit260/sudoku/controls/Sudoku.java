@@ -6,10 +6,11 @@
 
 package citbyui.cit260.sudoku.controls;
 
-import java.util.Scanner;
+import citbyui.cit260.sudoku.enums.ErrorType;
+import citbyui.cit260.sudoku.frames.MainFrame;
 import citbyui.cit260.sudoku.views.HelpMenuView;
 import citbyui.cit260.sudoku.views.MainMenuView;
-import citbyui.cit260.sudoku.exceptions.SudokuException;
+import java.util.Scanner;
 
 /**
  *
@@ -17,13 +18,14 @@ import citbyui.cit260.sudoku.exceptions.SudokuException;
  */
 public class Sudoku {
     
+    public static MainFrame mainFrame = null;  
     
    //Instant variable
     private static String[] playerList;
     private static final Scanner inFile = new Scanner(System.in);
     private static final HelpMenuView helpMenu = new HelpMenuView();
     
-    String instructions = 
+    /*String instructions = 
               "\n\t*******************************************************"
             + "\n\t*        Welcome to the game of Sudoku!               *"                            
             + "\n\t*   The object of the game is to enter the numbers    *"
@@ -32,7 +34,7 @@ public class Sudoku {
             + "\n\t*         No duplicates in any instances!             *"
             + "\n\t*            Good Luck and Have Fun!!!                *"
             + "\n\t*******************************************************"
-            + "\n";       
+            + "\n"; */      
     
     public Sudoku() {
     
@@ -65,8 +67,28 @@ public class Sudoku {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-    Sudoku sudoku = new Sudoku();
-    sudoku.display();
+    Sudoku sudoku = null;
+    try {
+        sudoku = new Sudoku();
+        
+        java.awt.EventQueue.invokeLater(new Runnable(){
+            public void run() {
+                Sudoku.mainFrame = new MainFrame();
+                Sudoku.mainFrame.setVisible(true);
+            }
+        });
+    }
+    catch (Throwable ex) {
+        ErrorType.displayErorrMsg("Unexpected error: " + ex.getMessage());
+        ErrorType.displayErorrMsg(ex.getStackTrace().toString());
+    }
+    finally {
+        if (Sudoku.mainFrame != null) {
+            Sudoku.mainFrame.dispose();
+        }
+    }    
+    
+    //sudoku.display();
     Sudoku.playerList = sudoku.getPlayerNames();
         
     
@@ -75,10 +97,10 @@ public class Sudoku {
     }
       
     
-    private void display() {
-        System.out.println(this.instructions);
+    //private void display() {
+      //  System.out.println(this.instructions);
     
-    }
+   // }
     
     private String[] getPlayerNames() {
         
