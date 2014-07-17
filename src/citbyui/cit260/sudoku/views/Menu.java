@@ -7,11 +7,8 @@
 package citbyui.cit260.sudoku.views;
 
 import citbyui.cit260.sudoku.controls.Sudoku;
-import citbyui.cit260.sudoku.exceptions.MenuException;
 import citbyui.cit260.sudoku.enums.ErrorType;
 import citbyui.cit260.sudoku.exceptions.SudokuException;
-import citbyui.cit260.sudoku.interfaces.DisplayInfo;
-import citbyui.cit260.sudoku.interfaces.EnterInfo;
 import java.util.Scanner;
 
 /**
