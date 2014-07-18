@@ -77,6 +77,11 @@ public class EnterPlayerNames extends javax.swing.JFrame {
         jtNameInput.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jbNames.setText("Continue");
+        jbNames.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbNamesActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jpBodyNamesLayout = new javax.swing.GroupLayout(jpBodyNames);
         jpBodyNames.setLayout(jpBodyNamesLayout);
@@ -127,6 +132,12 @@ public class EnterPlayerNames extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jbNamesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbNamesActionPerformed
+        GameFrame gameFrame = new GameFrame();
+        gameFrame.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jbNamesActionPerformed
 
     
 

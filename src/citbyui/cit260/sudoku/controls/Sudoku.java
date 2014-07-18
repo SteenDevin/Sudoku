@@ -44,9 +44,9 @@ public class Sudoku {
         return Sudoku.inFile;
     }
     
-    public static HelpMenuView getHelpMenu() {
-        return Sudoku.helpMenu;
-    }
+    //public static HelpMenuView getHelpMenu() {
+      //  return Sudoku.helpMenu;
+    //}
     
     public static String[] getPlayerList() {
         return playerList;
@@ -89,11 +89,11 @@ public class Sudoku {
     }    
     
     //sudoku.display();
-    Sudoku.playerList = sudoku.getPlayerNames();
+    //Sudoku.playerList = sudoku.getPlayerNames();
         
     
-    MainMenuView mainMenu = new MainMenuView();
-    mainMenu.getInput(null);
+    //MainMenuView mainMenu = new MainMenuView();
+    //mainMenu.getInput(null);
     }
       
     

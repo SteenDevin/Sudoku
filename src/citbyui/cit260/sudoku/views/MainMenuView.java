@@ -45,10 +45,10 @@ public class MainMenuView extends Menu implements EnterInfo {
             switch (command) {                               
                 case "G":
                     this.mainMenuControl.startGame();
-                case "H":
+                /*case "H":
                     HelpMenuView helpMenu = Sudoku.getHelpMenu();
                     helpMenu.getInput(null);
-                    break;
+                    break;*/
                 case "X":
                     return StatusType.EXIT;
                 

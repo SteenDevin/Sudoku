@@ -27,7 +27,7 @@ public class GameMenuView {
         {"N", "New Game"},
         {"P", "Game Preferences"},
         {"R", "Report stastistics"},
-        {"H", "Help"},
+       // {"H", "Help"},
         {"Q", "Quit"}
     };
     
@@ -61,10 +61,10 @@ public class GameMenuView {
                 case "R":
                     gameMenuControl.displayStatistics();
                     break;
-                case "H":
+                /*case "H":
                     HelpMenuView helpMenu = Sudoku.getHelpMenu();
                     helpMenu.getInput(null);
-                    break;
+                    break;*/
                 case "Q":
                     break;
                 default:
