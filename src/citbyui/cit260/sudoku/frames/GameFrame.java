@@ -233,8 +233,9 @@ public class GameFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jbStatisticsActionPerformed
 
     private void jbPreferencesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbPreferencesActionPerformed
-        //GamePreferencesFrame gamePreferencesFrame = new GamePreferencesFrame(this.game, this);
-        //gamePreferencesFrame.setVisible(true);
+        GamePreferences gamePreferences = new GamePreferences();
+        
+        gamePreferences.setVisible(true);
     }//GEN-LAST:event_jbPreferencesActionPerformed
 
     private void jbNewGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbNewGameActionPerformed
