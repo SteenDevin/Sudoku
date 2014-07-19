@@ -180,7 +180,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="33" red="0" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Enter the number of boxes you want prefilled on the board"/>
+                    <Property name="text" type="java.lang.String" value="Enter the number of boxes you want to be prefilled on the board"/>
                     <Property name="toolTipText" type="java.lang.String" value=""/>
                   </Properties>
                 </Component>

@@ -50,7 +50,7 @@ public class PreferencesFrame extends javax.swing.JFrame {
 
         jlNames.setFont(new java.awt.Font("Tempus Sans ITC", 1, 18)); // NOI18N
         jlNames.setForeground(new java.awt.Color(0, 51, 255));
-        jlNames.setText("Enter the number of boxes you want prefilled on the board");
+        jlNames.setText("Enter the number of boxes you want to be prefilled on the board");
         jlNames.setToolTipText("");
 
         javax.swing.GroupLayout jpTitleNamesLayout = new javax.swing.GroupLayout(jpTitleNames);
