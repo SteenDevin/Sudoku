@@ -10,12 +10,12 @@ package citbyui.cit260.sudoku.frames;
  *
  * @author Ethan Nelson
  */
-public class GamePreferences extends javax.swing.JFrame {
+public class PreferencesFrame extends javax.swing.JFrame {
 
     /**
-     * Creates new form GamePreferences
+     * Creates new form PreferencesFrame
      */
-    public GamePreferences() {
+    public PreferencesFrame() {
         initComponents();
     }
 
@@ -40,8 +40,6 @@ public class GamePreferences extends javax.swing.JFrame {
         jLayeredPane1 = new javax.swing.JLayeredPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBackground(new java.awt.Color(102, 255, 102));
-        setFocusCycleRoot(false);
 
         jPanel1.setBackground(new java.awt.Color(102, 255, 102));
 
@@ -52,7 +50,8 @@ public class GamePreferences extends javax.swing.JFrame {
 
         jlNames.setFont(new java.awt.Font("Tempus Sans ITC", 1, 18)); // NOI18N
         jlNames.setForeground(new java.awt.Color(0, 51, 255));
-        jlNames.setText("Enter the number of boxes you want the board to fill");
+        jlNames.setText("Enter the number of boxes you want prefilled on the board");
+        jlNames.setToolTipText("");
 
         javax.swing.GroupLayout jpTitleNamesLayout = new javax.swing.GroupLayout(jpTitleNames);
         jpTitleNames.setLayout(jpTitleNamesLayout);
@@ -142,7 +141,7 @@ public class GamePreferences extends javax.swing.JFrame {
                 .addGap(56, 56, 56)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 2, Short.MAX_VALUE)
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jtTitleHelp1)
                         .addGap(426, 426, 426))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -171,7 +170,7 @@ public class GamePreferences extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jpBodyNames, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jbQuitHelp, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -193,15 +192,15 @@ public class GamePreferences extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jbNames1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbNames1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbNames1ActionPerformed
+
     private void jbQuitHelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbQuitHelpActionPerformed
         GameFrame gameFrame = new GameFrame();
         gameFrame.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jbQuitHelpActionPerformed
-
-    private void jbNames1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbNames1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jbNames1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -220,20 +219,20 @@ public class GamePreferences extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(GamePreferences.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PreferencesFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(GamePreferences.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PreferencesFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(GamePreferences.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PreferencesFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(GamePreferences.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PreferencesFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new GamePreferences().setVisible(true);
+                new PreferencesFrame().setVisible(true);
             }
         });
     }
